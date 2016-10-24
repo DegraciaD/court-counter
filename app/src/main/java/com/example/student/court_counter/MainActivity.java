@@ -8,6 +8,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private int scoreTeamAwesome = 0;
+    private int scoreTeamJosh = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         displayForTeamAwesome(0);
+        displayForTeamJosh(0);
     }
 
     private void displayForTeamAwesome(int score){
@@ -23,9 +25,24 @@ public class MainActivity extends AppCompatActivity {
             scoreTeamAwesome.setText(String.valueOf(score));
     }
 
+    private void displayForTeamJosh(int score){
+        TextView scoreTeamJosh = (TextView) findViewById(R.id.txtVw_scoreTeamJosh);
+        if(scoreTeamJosh!=null)
+            scoreTeamJosh.setText(String.valueOf(score));
+    }
+
+
     public void addOneForTeamAwesome(View view) {
         int step = 1;
         scoreTeamAwesome += step;
         displayForTeamAwesome(scoreTeamAwesome);
     }
-}
+
+        public void addOneForTeamJosh(View view) {
+            int step = 1;
+            scoreTeamJosh += step;
+            displayForTeamJosh(scoreTeamJosh);
+        }
+
+    }
+
